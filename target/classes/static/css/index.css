@@ -1,0 +1,189 @@
+/* remove scrollbar*/
+body::-webkit-scrollbar{
+  display: none;
+}
+body{
+  background-color:white;
+}
+*{
+  font-family:'Open Sans';
+}
+.reveal{
+  position: relative;
+  opacity: 0;
+  transform: translateY(150px);
+  transition: all ease 2s;
+
+}
+
+
+.reveal.active {
+  transform: translateY(0px);
+  opacity: 1;
+}
+
+
+html {
+  scroll-behavior: smooth;
+}
+
+.head-img{
+    background-color: #848484;
+    padding-top: 20rem;
+    padding-bottom: 20rem;
+    background-image: url('img/La-Sapienza-Roma-scaled.jpg');
+    background-size:cover;
+    background-position: center;
+    background-blend-mode:multiply ;
+    
+}
+.btn{
+  font-size: 20px;
+  background-color: rgb(211, 210, 215);
+  box-shadow: rgb(65, 65, 72) ;
+  border-radius: 20px;
+  transition-duration: 0.3s;
+  cursor: pointer;
+  border: 0;
+}
+.btn:hover{
+  background-color: #606285;
+  color:white;
+  box-shadow:5px 5px 5px rgb(65, 65, 72) ;
+
+}
+/* about us section */
+.pic{
+    height: auto;
+    width:  500px;
+    
+  }
+.about{
+    width: 1130px;
+    max-width: 85%;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content:space-around;
+    
+  }
+  .about-us{
+    height: 100vh;
+    width: 100%;
+    padding: 90px 0;
+    background-color:white;
+  }
+  .text h2{
+    font-size: 60px;
+    font-weight: 600;
+    margin-bottom: 10px;
+    padding: 20px;
+  
+  }
+ 
+  span{
+    color: #4070f4;
+  }
+  
+  .text{
+    width: 540px;
+  }
+  .text p{
+    padding: 20px;
+    font-size: 18px;
+    line-height: 25px;
+    letter-spacing: 1px;
+    
+  }
+  
+
+  /* social's icons */
+  .fa {
+    padding: 20px;
+    font-size: 30px;
+    width: 30px;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 50%;
+  }
+  .fa:hover {
+    opacity: 0.7;
+  }
+  
+  .fa-facebook {
+    background: #3B5998;
+    color: white;
+  }
+
+ /* our service */
+
+ .services{
+  width: 1130px;
+  max-width: 85%;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content:space-around;
+}
+.our-services{
+  height: 100vh;
+  width: 100%;
+  padding: 90px 0;
+  background-color:white;
+ 
+  
+}
+
+
+ /* bottom of the page */
+
+.footer{
+  text-align: center;
+}
+
+  
+@media only screen and (max-width: 1200px){
+  .head-img{
+    padding-top: 20rem;
+    padding-bottom: 20rem ;
+
+  }
+  
+  .pic{
+    height: auto;
+    width: 300px;
+    
+  }
+  .our-services{
+    padding-top: 300px;
+    padding-bottom: 300px;
+  }
+ 
+  .text p{
+    font-size: 15px;
+  }
+  .text h2{
+    font-size: 40px;
+    
+  } 
+  .footer{
+    padding-top: 200px;
+  }
+
+
+}
+@media screen and (max-width: 600px){
+  .footer{
+   padding-top: 500px;
+  }
+  .pic{
+   width: 200px;
+  }
+  .text h2{
+   font-size: 20px;
+  }
+  .text p{
+   font-size: 13px;
+  }
+ }
+

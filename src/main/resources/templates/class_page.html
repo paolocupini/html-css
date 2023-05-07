@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title>Course Page</title>
+<link rel="stylesheet"
+	href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.rtl.min.css"
+	integrity="sha384-DOXMLfHhQkvFFp+rWTZwVlPVqdIhpDVYT9csOnHSgWQWPX0v5MCGtjCJbY6ERspU"
+	crossorigin="anonymous">
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" th:href="@{/css/class_page.css}">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link
+	href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap"
+	rel="stylesheet">
+	
+
+
+</head>
+<body>
+	<main>
+		<!-- Navbar fixed top-->
+		<nav class="navbar fixed-top navbar-expand-lg bg-light" id="nav1">
+
+			<img th:src="@{/images/0000.png}" alt="Logo" width="180" class="logo">
+			<button class="navbar-toggler" type="button"
+				data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+				aria-controls="navbarSupportedContent" aria-expanded="false"
+				aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="navbarSupportedContent">
+				<ul class="navbar-nav me-auto mb-2 mb-lg-0">
+					<li class="nav-item"><a class="nav-link " aria-current="page"
+						th:href="@{/}">Home</a></li>
+
+
+				</ul>
+			</div>
+		</nav>
+		<!--background image-->
+		<header class="head-img text-white text-center" id="header" th:style="|background-image : url(@{|/course/${course.getClass_code()}/image/|})|">
+			<div class="container1">
+				<div class="row">
+					<div class="col-xl-9 mx-auto"> 
+						<h1 th:text="${course.getName()}">Course Name</h1>
+					</div>
+				</div>
+			</div>
+		</header>
+
+
+
+
+		<!-- course section-->
+		<div class="course reveal">
+			<nav id="navbar-example2" class="navbar bg-light px-3 mb-3 reveal">
+				<a class="navbar-brand" href="#" th:text="${course.getName()}">Course
+					Name</a>
+				<ul class="nav nav-pills">
+					<li class="nav-item"><a class="nav-link"
+						href="#scrollspyLesson">Info del Corso</a></li>
+					<li class="nav-item"><a class="nav-link"
+						href="#scrollspyProf">Info Prof</a></li>
+					<li class="nav-item"><a class="nav-link"
+						href="#scrollspyLinks">Risorse</a></li>
+				</ul>
+			</nav>
+
+			<!-- Side nav -->
+			<div class="sidenav reveal">
+				<div class="file-section reveal">
+					<h5>File section</h5>
+					<div class="divider-2"> <span></span></div>
+				</div>
+					
+			<a th:href="@{|/course/${course.getClass_code()}/download?filename=${file.getFilename()}|}"
+			 th:each="file : ${course.getFiles()}" 
+			 th:text="${file.getFilename()}" 
+			 th:attr="download = ${file.getFilename()}"
+			 download
+			 
+			 >Link</a> 
+				
+				
+			</div>
+
+
+			<div class="content reveal">
+					<!-- Scrollpy Section Lezioni-->
+					<h4 id="scrollspyLesson">Info Corso</h4>
+					<div class="divider-1"> <span></span></div>
+					<div class="lessons">
+						<p th:text="${course.getDetails()}">course details</p>
+						<!-- FILE UPLOAD-->
+						<div class="input-group mb-3" style="border-radius: 20px;">
+							<input type="file" class="form-control" id="inputGroupFile02" style="border-radius: 20px;">
+							<input type="submit" class="input-group-text" for="inputGroupFile02" style="border-radius: 20px;"></input>
+						  </div>
+					</div>
+					<!--Scrollpy section Schedule-->
+					<h4 id="scrollspyProf" th:text="|Prof. ${course.getProfessor_name()}|">Info Prof</h4>
+					<div class="divider-1"> <span></span></div>
+					<div class="info-prof ">
+						<p th:text="${course.getProfessor_details()}">Prof details</p>
+					</div>
+					<!-- risorse e link-->
+					<h4 id="scrollspyLinks">Risorse</h4>
+					<div class="divider-1"> <span></span></div>
+
+					<div class="sources">
+
+<!--  Questo [(${course.getResources()})] che vedi sotto serve per fare il display dell'html conservato nel db-->
+							[(${course.getResources()})]
+							
+						
+							<p>In questa sezione sono presenti i link di maggiore interesse</p>
+							
+							 <div class="row row-cols-3 row-cols-lg-5 g-2 g-lg-3">
+								<div class="col">
+
+
+									<a
+										href="#https://www.youtube.com/@videodiag-sapienzauniversi4757/playlists?view=50&sort=dd&shelf_id=2" class="lezioni-yt">
+										<i class="fa fa-youtube-play" style="color: rgb(201, 52, 52)"></i>
+									</a>
+									<div class="p-3 border " style="text-align: center;">Youtube Lessons</div>
+								</div>
+								<div class="col">
+
+									<a href="#" class="#"> <i class="fa fa-folder-open"
+										aria-hidden="true" style="color: rgb(84, 57, 156)"></i>
+									</a>
+									<div class="p-3 border " style="text-align: center;">Prof Website</div>
+								</div>
+								<div class="col">
+
+									<a href="#https://corsidilaurea.uniroma1.it/it/corso/2022/31810/home" class="#"> <i class="fa fa-university"
+										aria-hidden="true" style="color: rgb(50, 82, 134)"></i>
+									</a>
+									<div class="p-3 border" style="text-align: center;">Istitutional Website</div>
+								</div>
+								<div class="col">
+
+									<a href="#https://chat.whatsapp.com/H55IGEqG1Ph5NEY2elDYHm" class="#"> <i class="fa fa-whatsapp"
+										aria-hidden="true" style="color: rgb(143, 211, 48)"></i>
+									</a>
+									<div class="p-3 border "style="text-align: center;" >Chat Groups</div>
+								</div>
+								<div class="col">
+                  
+									<a href="# https://www.google.com/maps/place/Edificio+Marco+Polo/@41.8963187,12.5202463,15z/data=!4m5!3m4!1s0x0:0x773e8360f9a9e5e!8m2!3d41.8963187!4d12.5202463?shorturl=1" class="#">
+									  <i class="fa fa-map-marker" aria-hidden="true" ></i>
+				  
+									</a>
+									<div class="p-3 border " style="text-align: center;">Location</div>
+									
+								  </div>
+
+
+							 
+						</div>
+					</div>
+
+				</div>
+		</div>		
+		
+	</main>
+	      
+    <script type="text/javascript">
+		window.addEventListener('scroll',reveal);
+		function reveal(){
+		  var reveals =document.querySelectorAll('.reveal');
+		  for (var i=0; i<reveals.length;i++){
+			var windowheight=window.innerHeight;
+			var revealtop=reveals[i].getBoundingClientRect().top;
+			var revealpoint =150;
+  
+			// when we scroll down elements become active ->> see CSS 
+			if (revealtop<windowheight-revealpoint){
+			  reveals[i].classList.add('active');
+			}
+			else{
+			  reveals[i].classList.remove('active');
+			}
+		  }
+		}
+  
+	  </script>
+</body>
+</html>
