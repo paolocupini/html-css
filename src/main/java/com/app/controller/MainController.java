@@ -126,9 +126,11 @@ public class MainController {
 		response.setContentType(MediaType.IMAGE_JPEG_VALUE);
 		
 		ResponseCourseDto dto = c_service.getOneCourse(id).get();
-		
+		if(dto.getImage() != null) {
+			
 		InputStream is = new ByteArrayInputStream(dto.getImage());
 		IOUtils.copy(is, response.getOutputStream());
+		}
 		
 	}
 	

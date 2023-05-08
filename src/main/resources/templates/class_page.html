@@ -96,11 +96,6 @@
 					<div class="divider-1"> <span></span></div>
 					<div class="lessons">
 						<p th:text="${course.getDetails()}">course details</p>
-						<!-- FILE UPLOAD-->
-						<div class="input-group mb-3" style="border-radius: 20px;">
-							<input type="file" class="form-control" id="inputGroupFile02" style="border-radius: 20px;">
-							<input type="submit" class="input-group-text" for="inputGroupFile02" style="border-radius: 20px;"></input>
-						  </div>
 					</div>
 					<!--Scrollpy section Schedule-->
 					<h4 id="scrollspyProf" th:text="|Prof. ${course.getProfessor_name()}|">Info Prof</h4>
@@ -160,14 +155,29 @@
 									<div class="p-3 border " style="text-align: center;">Location</div>
 									
 								  </div>
+							 </div>
+					</div>
+
+								  <h4 id="scrollspyLinks">File Upload</h4>
+								  <div class="divider-1"> <span></span></div>
+						
+								  <div class="info-prof" >
+									<p>Per contribuire allo sviluppo e all'efficienza del sito, puoi aggiungere file che ritieni utili per la fruizione dei futuri studenti.</p>
+								   <!-- FILE UPLOAD-->
+								   <div class="input-group mb-3" style="border-radius: 20px;">
+									<input type="file" class="form-control" id="inputGroupFile02" style="border-radius: 20px;">
+									<input type="submit" class="input-group-text" for="inputGroupFile02" style="border-radius: 20px;"></input>
+								  </div>
+								  </div>
 
 
 							 
-						</div>
 					</div>
 
 				</div>
 		</div>		
+		</div>
+		
 		
 	</main>
 	      

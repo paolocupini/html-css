@@ -65,7 +65,7 @@
 <body>
 	<!-- tonnav -->
 
-	<nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light">
+	<nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light" style="direction: ltr;">
 		<img th:src="@{/images/0000.png}" alt="Logo" width="180" class="logo">
 		<button class="navbar-toggler" type="button" data-toggle="collapse"
 			data-target="#navbarNav" aria-controls="navbarNav"
@@ -118,7 +118,10 @@
 			<div class="card" th:each=" c : ${courses.get(0)}"
 				th:with="course = ${c}">
 				<div th:each="d : ${course}">
+					<div class="scrolling-text">
+
 					<h2 th:text="${d.getName()}">Course Name</h2>
+					</div>
 					<div class="divider-1">
 						<span></span>
 						<h5 th:text="${d.getClass_code()}">course code</h5>
@@ -164,7 +167,10 @@
 				<div class="card" th:each=" c : ${courses.get(1)}"
 					th:with="course = ${c}">
 					<div th:each="d : ${course}">
+						<div class="scrolling-text">
+
 						<h2 th:text="${d.getName()}">Course Name</h2>
+						</div>
 						<div class="divider-1">
 							<span></span>
 							<h5 th:text="${d.getClass_code()}">course code</h5>
@@ -205,7 +211,11 @@
 					<div class="card" th:each=" c : ${courses.get(2)}"
 						th:with="course = ${c}">
 						<div th:each="d : ${course}">
+							<div class="scrolling-text">
+
 							<h2 th:text="${d.getName()}">Course Name</h2>
+							</div>
+
 							<div class="divider-1">
 								<span></span>
 								<h5 th:text="${d.getClass_code()}">course code</h5>

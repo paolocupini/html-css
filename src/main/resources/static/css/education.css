@@ -27,7 +27,7 @@ html {
 	  cursor: pointer;
 	  border: 0;
 	  margin-left: 40px;
-	  margin-bottom: 25px;
+	  margin-bottom: 40px;
 	}
 	.btn:hover{
 		background-color: #606285;
@@ -166,8 +166,10 @@ html {
 	}
 	
 	.card:hover{
-	  box-shadow:15px 15px 20px rgb(3, 18, 37);
-	  background-color: #d1d2d7;
+		box-shadow:  3px 3px 10px 5px rgb(14, 14, 14);
+		background-color: #d1d2d7;
+		transition: box-shadow 0.5s ease-in-out;
+	   
 	}
 	 .card:hover:p {
 		transition: all 0.3s ease-out;
@@ -195,15 +197,28 @@ html {
    
 
 	
-	.card h2 {
-	  font-weight: 800;
-	  overflow-x: scroll;
-	  overflow: auto;
-	  text-align: center;
-	  font-size:30px ;
-  
+	.scrolling-text {
+		overflow: hidden; /* Hide text outside of div */
+		direction: ltr;
+	  }
 	  
-	}
+	
+	  .scrolling-text:hover h2 {
+		animation: scroll 2s linear; 
+		white-space: nowrap; 
+	  }
+	
+	
+	  
+	  @keyframes scroll {
+		0% {
+		  transform: translateX(-100%);
+		}
+		100% {
+		  transform: translateX(0%); 
+		}
+	  }
+	
 	.card h5{
 	  font-weight: 600;
 	  margin-top: 10%;
@@ -440,14 +455,10 @@ html {
 	  
 		
 	  }
-	  .card h2{
-		overflow-x: scroll;
-		font-size: 20px;
-		
-	  }
+	
 	  .btn{
 		margin-left: 30px;
-		margin-bottom: 100px;
+		margin-bottom: 120px;
 		font-size: 15px;
 	  }
 	  h1{

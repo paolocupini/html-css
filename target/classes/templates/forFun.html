@@ -121,78 +121,70 @@
 			</div>
 
 			<div class="scrolling-wrapper reveal" >
-
-
-				<!-- event cards-->
-				<div class="item-container" th:each="p : ${posts}" th:if="${p.getCategory()} == ${c.getName()}">
-
-					<!--image for the event-->
-					<div class="img-container">
-						<img th:src="@{|/post/image/${p.getImage().getId()}|}" alt="Card image" name="image_id">
-					</div>
-
-					<div class="body-container" th:name="${p.getTitle()}">
-						<div class="overlay"></div>
-						<div class="event-info">
-							<p name="title" class="title" th:text="${p.getTitle()}">title</p>
-							<div class="small-container" th:with="date = ${p.getEvent_date()}" th:unless="date != null">
-								<p date name="date-event" class="date-event" 
-									th:text=" |event_date: ${#dates.format( date , 'dd/mm/yyyy')} |"> date </p>
+				
+					   <div class="item-container">
+						<div class="img-container" id="move">
+							<img src="/img/foto-allestimenti-interni-bar-locali-immagine-incentivante-13.jpg" alt="Event image" name="image_id">
+						</div>
+			
+						<div class="body-container" name="">
+							<div class="overlay"></div>
+							
+							<div class="event-info">
+								<p name="title" class="title">title</p>
+								<div class="small-container">
+								<p name="place" class="place">Roma,<date name="date-event" class="date-event"> 26/03/2002</date></p></div>
+								<div class="info-event">
+											
+									<div class="event-description">
+										<p style="overflow: hidden; white-space: normal;">
+											Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
+											Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
+											
+										
+											
+										</p>
+										
+								</div>
 							</div>
-							</div>
-							<div class="info-event">
-
-							<div class="event-description">
-								<p th:text="${p.getBody()}">
-
-								</p>
-							</div>
-							</div>
+			
 							<footer>
 								<div class="small-container2">
-									<p name="author" class="author"th:text="${p.getAuthor()}">Autore
-										
-										</p>
-								</div>
-								
-								<div class="small-container2">
-								<p name="published-at" class="published-at"th:with="date = ${p.getPublished_at()} "
-										th:text="|published : ${#dates.format(date, 'dd/MM/yyyy')}|"> published_at</p>
-										</div>
-								
+								<p name="author" class="author" style="white-space: normal;">Autore,<date name="published-at" class="published-at" style="white-space: normal;"> 06/03/2023</date></p>
+							</div>
 							</footer>
-	
-
+								
+								
+							</div>
+							<button class="action">Link</button>
 						</div>
-						
-						
-						<button class="action">Link</button>
 					</div>
-				</div>
-<!-- EXAMPLE -->
+				
+
+
+				
+
 				
 				 <!--Card--> 
-				 <div class="item-container">
+				 <div class="item-container" th:each="p : ${posts}" th:if="${p.getCategory()} == ${c.getName()}">
 					<!--image for the event-->
 					<div class="img-container" id="move">
-						<img src="/img/foto-allestimenti-interni-bar-locali-immagine-incentivante-13.jpg" alt="Event image" name="image_id">
+						<img th:src="@{|/post/image/${p.getImage().getId()}|}" alt="Event image" name="image_id">
 					</div>
 		
-					<div class="body-container" name="">
+					<div class="body-container" th:name="${p.getTitle()}">
 						<div class="overlay"></div>
 						
 						<div class="event-info">
-							<p name="title" class="title">title</p>
-							<div class="small-container">
-							<p name="place" class="place">Roma,<date name="date-event" class="date-event"> 26/03/2002</date></p></div>
+							<p name="title" class="title" th:text="${p.getTitle()}" >title</p>
+							<div class="small-container" th:with="date = ${p.getEvent_date()}" th:unless="date != null">
+							<p name="place" class="place">Roma,<p name="date-event" class="date-event" th:text=" |event_date: ${#dates.format( date , 'dd/mm/yyyy')} |"> event_date</p></p>
+							</div>
 							<div class="info-event">
 										
 								<div class="event-description">
-									<p style="overflow: hidden;">
-										Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
-										Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
-										
-									
+									<p style="overflow: hidden;" th:utext="${p.getBody()}">
+										body
 										
 									</p>
 									
@@ -201,17 +193,16 @@
 		
 						<footer>
 							<div class="small-container2">
-							<p name="author" class="author">Autore,<date name="published-at" class="published-at"> 06/03/2023</date></p>
+							<p name="author" class="author" th:text="|${p.getAuthor()}, at ${#dates.format(date, 'dd/MM/yyyy')}| " th:with="date = ${p.getPublished_at()} " >Autore</p>
 						</div>
 						</footer>
 							
 							
 						</div>
-						<button class="action">Link</button>
 					</div>
 				</div>
 				
-
+				</div>
 
 			
 			
@@ -229,11 +220,11 @@
         
             <label for="author">Autore</label>
             <input id="author" type="text" style="direction: ltr; width: 40%;margin-right: 60%;">
-            <p for="author" id="author_lb" class="error"style="direction: ltr; width: 40%;margin-right: 60%;" >Error Label</p>
+            <p for="author" id="author_lb" class="error"style="direction: ltr;" >Error Label</p>
             
 			<label for="title">Titolo</label>
             <input id="title" type="text"  style="direction: ltr; width: 40%;margin-right: 60%;">
-            <p for="title" id="title_lb" class="error" style="direction: ltr; width: 40%;margin-right: 60%;">Error Label</p>
+            <p for="title" id="title_lb" class="error" style="direction: ltr;">Error Label</p>
             
 			<label for="category">Categoria</label>
             <select id="category"   style="direction: ltr;width: 40%;margin-right: 60%;">
@@ -249,14 +240,20 @@
 			
             <label for="event-date">Date Of Event</label>
 			<input type="date" name="date" id="date" style="direction: ltr;">
-            <p for="event-date" id="date_lb"name="date_lb" class="error" style="direction: ltr; width: 40%;margin-right: 60%;" ></p>
+            <p for="event-date" id="date_lb"name="date_lb" class="error" style="direction: ltr; " ></p>
 			
 			<label  for="upload-btn-wrapper">Select A File</label>
-		<div class="mb-3"  style="direction: ltr;">
-				<input type="file"class="form-control" name="image" id="image"  style="border-radius: 20px;">
-				
-          </div>
-		  <p for="image" id="image_lb" class="error" style="direction: ltr;width: 40%;margin-right: 60%;"></p>
+
+			<div class="fileUpload btn btn-primary" style="text-align: center; width: 40%;margin-right: 60%;">
+				<span>Upload</span>
+				<input id="uploadBtn" type="file" class="upload"  />
+				</div>
+			
+			<input id="uploadFile" placeholder="File Name here" disabled="disabled" style="text-align: left; width: 40%;margin-right: 60%;" />
+			  
+			
+		
+		  <p for="image" id="image_lb" class="error" style="direction: ltr;"></p>
         
            
             <button type="reset">Reset</button>
@@ -280,6 +277,11 @@
 	
 
 	<script type="text/javascript">
+		    document.getElementById("uploadBtn").onchange = function () {
+			document.getElementById("uploadFile").value = this.value;
+};
+
+
 		window.addEventListener('scroll',reveal);
 		function reveal(){
 		  var reveals =document.querySelectorAll('.reveal');

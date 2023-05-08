@@ -10,6 +10,7 @@ import javax.transaction.Transactional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.util.StringUtils;
 import org.springframework.web.multipart.MultipartFile;
 
 import com.app.dto.RequestPostDto;
@@ -154,8 +155,20 @@ public class PostService {
 		Optional<PostImage> image = mapper.fromMultiPartFileToModel(file);
 		if (image.isEmpty() == true) {
 			log.info("cannot save image into the db");
-			map.put("image", "The selected image cannot be persisted");
+			map.put("image", "Image cannot be null");
 		}
+		String extension = StringUtils.getFilenameExtension(file.getOriginalFilename());
+		log.info(extension);	
+		if (extension.equals("jpg") == true || extension.equals("jpeg") == true || extension.equals("png") == true) {
+		}else {
+			log.info("cannot save image into the db");
+			map.put("image", "Image format supported: jpg, jpeg , png");
+			
+		}
+		
+		
+		
+		
 		}
 		
 		Date event_date = request.getEvent_date();

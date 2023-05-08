@@ -1,6 +1,6 @@
 function createPost() {
 	const formData = new FormData();
-	formData.append('image', $('#image')[0].files[0]);
+
 
 	const post = {
 		author: $('#author').val(),
@@ -13,7 +13,8 @@ function createPost() {
 
 	if (validatePost(post) == true) {
 		console.log("Post is correct");
-		
+
+		formData.append('image', $('#image')[0].files[0]);
 		formData.append('post', new Blob([JSON.stringify(post)], { type: 'application/json' }));
 		sendRequestPostDto(formData);
 	} else {
@@ -25,8 +26,7 @@ function createPost() {
 
 }
 
-$(document).ready(function () {
-	
+$(document).ready(function() {
 	$(author_lb).text("");
 	$(title_lb).text("");
 	$(body_lb).text("");
@@ -43,7 +43,6 @@ $(document).ready(function () {
 	});
 
 
-
 });
 
 function resetForm() {
@@ -53,17 +52,22 @@ function resetForm() {
 	})
   }
 
+
 function validatePost(post) {
 	var res2 = true;
 	var res1 = checkFormFields(post);
 
+	var formData = new FormData();
+	formData.append('image', $('#image')[0].files[0]);
+	formData.append('post', new Blob([JSON.stringify(post)], { type: 'application/json' }));
+
 	$.ajax({
 		url: 'http://localhost:8080/api/post/validate',
 		type: 'POST',
-		data: JSON.stringify(post),
-		contentType: "application/json",
+		data: formData,
+		contentType: false,
 		processData: false,
-		success: function (response) {
+		success: function(response) {
 
 
 			if (response !== "") {
@@ -77,14 +81,14 @@ function validatePost(post) {
 
 			//   console.log('Request sent successfully:', response);
 		},
-		error: function (xhr, status, error) {
+		error: function(xhr, status, error) {
 			console.error('Error creating post:', error);
 		}
 	});
 
-	if(res1 == false || res2 == false){
+	if (res1 == false || res2 == false) {
 		return false;
-	}else{
+	} else {
 		return true;
 	}
 }
@@ -96,25 +100,24 @@ function sendRequestPostDto(formData) {
 		data: formData,
 		contentType: false,
 		processData: false,
-		success: function (response) {
+		success: function(response) {
 			console.log('Post created successfully:', response);
 		},
-		error: function (xhr, status, error) {
+		error: function(xhr, status, error) {
 			console.error('Error creating post:', error);
 		}
 	});
+	// RELOAD DOPO UPDATE CON SUCCESSO
 	location.reload(true);
+
 }
 
 function displayErrors(response) {
 
-	
 	if (response.event_date !== null) {
-		$(date_lb).text("pick a date");
 		$(date_lb).text(response.event_date);
 	}
 	if (response.image !== null) {
-		$(image_lb).text("chose a file");
 		$(image_lb).text(response.image);
 
 	}
@@ -125,6 +128,9 @@ function displayErrors(response) {
 }
 
 function checkFormFields(post) {
+	$(author_lb).text("");
+	$(title_lb).text("");
+	$(body_lb).text("");
 
 	var res = true;
 	if (post["title"].length > 255) {
@@ -139,7 +145,7 @@ function checkFormFields(post) {
 		$(author_lb).text("Author cannot be empty");
 		res = false;
 	}
-	if (   post["author"].length < 3 ||  post["author"].length > 255) {
+	if (post["author"].length < 3 || post["author"].length > 255) {
 		$(author_lb).text("Author name should be at least 3 characters long and 255 maximum long");
 		res = false;
 	}
@@ -147,7 +153,7 @@ function checkFormFields(post) {
 		$(body_lb).text("body cannot be empty");
 		res = false;
 	}
-	if (post["body"].length < 50 ||  post["body"].length > 1000) {
+	if (post["body"].length < 50 || post["body"].length > 1000) {
 		$(body_lb).text("Body should be at least 50 characters long and 1000 maximum long");
 		res = false;
 	}
