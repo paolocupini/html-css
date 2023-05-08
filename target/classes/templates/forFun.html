@@ -121,50 +121,7 @@
 			</div>
 
 			<div class="scrolling-wrapper reveal" >
-				
-					   <div class="item-container">
-						<div class="img-container" id="move">
-							<img src="/img/foto-allestimenti-interni-bar-locali-immagine-incentivante-13.jpg" alt="Event image" name="image_id">
-						</div>
-			
-						<div class="body-container" name="">
-							<div class="overlay"></div>
-							
-							<div class="event-info">
-								<p name="title" class="title">title</p>
-								<div class="small-container">
-								<p name="place" class="place">Roma,<date name="date-event" class="date-event"> 26/03/2002</date></p></div>
-								<div class="info-event">
-											
-									<div class="event-description">
-										<p style="overflow: hidden; white-space: normal;">
-											Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
-											Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
-											
-										
-											
-										</p>
-										
-								</div>
-							</div>
-			
-							<footer>
-								<div class="small-container2">
-								<p name="author" class="author" style="white-space: normal;">Autore,<date name="published-at" class="published-at" style="white-space: normal;"> 06/03/2023</date></p>
-							</div>
-							</footer>
-								
-								
-							</div>
-							<button class="action">Link</button>
-						</div>
-					</div>
-				
-
-
-				
-
-				
+		
 				 <!--Card--> 
 				 <div class="item-container" th:each="p : ${posts}" th:if="${p.getCategory()} == ${c.getName()}">
 					<!--image for the event-->
@@ -178,12 +135,12 @@
 						<div class="event-info">
 							<p name="title" class="title" th:text="${p.getTitle()}" >title</p>
 							<div class="small-container" th:with="date = ${p.getEvent_date()}" th:unless="date != null">
-							<p name="place" class="place">Roma,<p name="date-event" class="date-event" th:text=" |event_date: ${#dates.format( date , 'dd/mm/yyyy')} |"> event_date</p></p>
+							<p name="place" class="place"style="white-space: normal;">Roma,<p name="date-event" class="date-event" th:text=" |event_date: ${#dates.format( date , 'dd/mm/yyyy')} |" style="white-space: normal;"> event_date</p></p>
 							</div>
 							<div class="info-event">
 										
 								<div class="event-description">
-									<p style="overflow: hidden;" th:utext="${p.getBody()}">
+									<p style="overflow: hidden; white-space: normal;" th:utext="${p.getBody()}">
 										body
 										
 									</p>
@@ -193,7 +150,7 @@
 		
 						<footer>
 							<div class="small-container2">
-							<p name="author" class="author" th:text="|${p.getAuthor()}, at ${#dates.format(date, 'dd/MM/yyyy')}| " th:with="date = ${p.getPublished_at()} " >Autore</p>
+							<p name="author" class="author"style="white-space: normal;" th:text="|${p.getAuthor()}, at ${#dates.format(date, 'dd/MM/yyyy')}| " th:with="date = ${p.getPublished_at()} " >Autore</p>
 						</div>
 						</footer>
 							
