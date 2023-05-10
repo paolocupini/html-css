@@ -1,3 +1,8 @@
+
+a, a:hover, a:focus, a:active {
+	text-decoration: none;
+	color: inherit;
+}
 html {
 	scroll-behavior: smooth;
 	
@@ -26,8 +31,8 @@ html {
 	  transition-duration: 0.3s;
 	  cursor: pointer;
 	  border: 0;
-	  margin-left: 40px;
-	  margin-bottom: 40px;
+	  margin-left: 90px;
+	  margin-bottom: 30px;
 	}
 	.btn:hover{
 		background-color: #606285;
@@ -95,7 +100,8 @@ html {
 	  display: inline-block;
 	  position: relative;
 	  
-	  background-color: white;
+	  background-color: #f9fafd;
+
 	  border-radius: 30px;
 	  padding: 24px;
 	  margin: 12px;
@@ -112,7 +118,7 @@ html {
 	  z-index: -1;
 	  top: -16px;
 	  right: -16px;
-	  background: #9bb8e0;
+	  background: #72aab3;
 	  height: 32px;
 	  width: 32px;
 	  border-radius: 32px;
@@ -155,7 +161,7 @@ html {
 	  overflow: hidden;
 	  top: 0;
 	  right: 0;
-	  background-color: #6ca6ab;
+	  background-color: #72aab3;
 	  border-radius: 0 4px 0 32px;
 	}
 	.go-arrow {
@@ -182,8 +188,8 @@ html {
   
 	  /* Series of dividers */
 	  .divider-1 {
-		border-bottom: 2px solid rgb(143, 143, 223);
-		background-color: rgb(143, 143, 223);
+		border-bottom: 2px solid #079bb2;
+		background-color:#079bb2;
 		height: 2px;
 		margin: 0.5em 0px 1.5em;
 	}
@@ -200,6 +206,10 @@ html {
 	.scrolling-text {
 		overflow: hidden; /* Hide text outside of div */
 		direction: ltr;
+	  }
+	  h2{
+		font-weight: bold;
+
 	  }
 	  
 	
@@ -237,13 +247,12 @@ html {
 	-webkit-overflow-scrolling: touch;
 	background-color:white;
 	border-radius: 30px;
-	box-shadow:5px 5px 10px rgb(170, 174, 175);
-	
+	box-shadow:5px 5px 10px rgb(35, 77, 129);	
 	transition: 0.5s;
   }
   .scrolling-wrapper:hover{
-	box-shadow:15px 15px 20px rgb(3, 18, 37);
-	background-color:  #9bb8e0;
+	box-shadow:15px 15px 20px rgb(35, 77, 129);
+	background-color: #72aab3;
   
   }
   .scrolling-wrapper::-webkit-scrollbar{
@@ -255,11 +264,13 @@ html {
   /* category header */
   .container{
 	margin-bottom: 5%;
-	margin-top: 15%;
-	box-shadow:5px 5px 10px rgb(143, 163, 189);
+	margin-top: 10%;
+	box-shadow:5px 5px 10px rgb(35, 77, 129);	
 	border-radius: 30px;
 	background-color: #f9fafd;
 	color: rgb(18, 17, 17);
+	text-align: center;
+
 	
   
   }
@@ -457,9 +468,8 @@ html {
 	  }
 	
 	  .btn{
-		margin-left: 30px;
-		margin-bottom: 120px;
 		font-size: 15px;
+		margin-top: -15px;
 	  }
 	  h1{
 		font-size: 30px;

@@ -169,6 +169,8 @@ public class PostService {
 		
 		
 		
+		}else {
+			map.put("image", "Please provide an image");
 		}
 		
 		Date event_date = request.getEvent_date();

@@ -27,7 +27,7 @@
       aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
+		<div class="collapse navbar-collapse justify-content-end" id="navbarNav">
       <ul class="navbar-nav">
 
         <li class="nav-item active">
@@ -47,19 +47,22 @@
   </nav>
   <!--background image-->
   <header class="head-img text-white text-center"
-    th:style="|background-image: url( @{/images/La-Sapienza-Roma-scaled.jpg} );|">
+    th:style="|background-image: url( @{/images/La-Sapienza-Roma-scaled.jpg} ); padding-top: 116px;|">
     <div class="container">
       <div class="row">
         <div class="col-xl-9 mx-auto">
-
           <h1>SapienzaNET</h1>
+
           <!-- buttons -->
-          <button type="button" class="btn btn-primary btn-lg">
-            <a th:href="@{/education}"> Education </a>
+          <div class="button-cl" style="margin-top: 200px; word-spacing: 320px;">
+          <button type="button" class="btn btn-primary btn-lg " style="margin-top:20px">
+            <a th:href="@{/education}" style="color:inherit;     font-family: math;" > Education </a>
           </button>
           <button type="button" class="btn btn-primary btn-lg">
-            <a th:href="@{/forFun}"> For Fun</a>
+            <a th:href="@{/forFun}" style="color:inherit ;     font-family: math;" > For Fun</a>
           </button>
+          </div>
+          
         </div>
       </div>
     </div>
@@ -108,7 +111,7 @@
 
   <div class="footer">
 
-    <i class="fa fa-github" style="font-size:50px"></i>
+    <a class="fa fa-github" target="_blank" style="font-size:50px ; color: inherit;" href="https://github.com/Angelo-Pio/SapienzaNet"></a>
     <p class="text-muted small mb-4 mb-lg-0">© SapienzaNET 2023. All rights Reserved.</p>
 
   </div>

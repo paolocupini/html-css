@@ -14,9 +14,10 @@ function createPost() {
 	if (validatePost(post) == true) {
 		console.log("Post is correct");
 
-		formData.append('image', $('#image')[0].files[0]);
+		formData.append('image', $('#uploadBtn')[0].files[0]);
 		formData.append('post', new Blob([JSON.stringify(post)], { type: 'application/json' }));
 		sendRequestPostDto(formData);
+		
 	} else {
 		console.log("post not correct");
 		return false;
@@ -58,7 +59,7 @@ function validatePost(post) {
 	var res1 = checkFormFields(post);
 
 	var formData = new FormData();
-	formData.append('image', $('#image')[0].files[0]);
+	formData.append('image', $('#uploadBtn')[0].files[0]);
 	formData.append('post', new Blob([JSON.stringify(post)], { type: 'application/json' }));
 
 	$.ajax({
@@ -102,13 +103,14 @@ function sendRequestPostDto(formData) {
 		processData: false,
 		success: function(response) {
 			console.log('Post created successfully:', response);
+			location.reload(true);
 		},
 		error: function(xhr, status, error) {
 			console.error('Error creating post:', error);
 		}
 	});
 	// RELOAD DOPO UPDATE CON SUCCESSO
-	location.reload(true);
+	
 
 }
 
@@ -157,6 +159,7 @@ function checkFormFields(post) {
 		$(body_lb).text("Body should be at least 50 characters long and 1000 maximum long");
 		res = false;
 	}
+	
 
 
 	return res;

@@ -67,12 +67,15 @@
 
 	<nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light" style="direction: ltr;">
 		<img th:src="@{/images/0000.png}" alt="Logo" width="180" class="logo">
+		
 		<button class="navbar-toggler" type="button" data-toggle="collapse"
 			data-target="#navbarNav" aria-controls="navbarNav"
 			aria-expanded="false" aria-label="Toggle navigation">
 			<span class="navbar-toggler-icon"></span>
 		</button>
-		<div class="collapse navbar-collapse" id="navbarNav">
+		
+		
+		<div class="collapse navbar-collapse justify-content-end" id="navbarNav">
 			<ul class="navbar-nav">
 
 				<li class="nav-item active"><a class="nav-link" th:href="@{/}">Home
@@ -87,6 +90,7 @@
 
 			</ul>
 		</div>
+		
 	</nav>
 	<!-- Background img -->
 	<header class="head-img text-white text-center"

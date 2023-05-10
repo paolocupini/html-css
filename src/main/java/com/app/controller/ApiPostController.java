@@ -98,7 +98,7 @@ public class ApiPostController {
 //	@ExceptionHandler({MethodArgumentNotValidException.class, ValidationException.class })
 	
 	@PostMapping("/validate")
-	public ResponseEntity<HashMap<String, String>> validate(@RequestPart("post") RequestPostDto post, @RequestPart("image") MultipartFile image) {
+	public ResponseEntity<HashMap<String, String>> validate(@RequestPart("post") RequestPostDto post, @RequestPart(required = false,name = "image") MultipartFile image) {
 
 		
 		Optional<HashMap<String,String>> map = service.validateRequest(post, image);
