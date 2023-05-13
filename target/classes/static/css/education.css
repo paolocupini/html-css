@@ -313,137 +313,176 @@ html {
   
   
   
-  
+  .footer{
+	width: 60%;
+	text-align: center;
+	margin-right: 300px;
+  }
   
   
   
   /*form*/
   .contact-form {
-	background-color: #f2f2f2;
+	background-color: #eef4f7;
+	
 	padding: 20px;
-	margin-right: 250px;
 	margin-top: 200px;
 	text-align: left;
-	margin-bottom: 100px;
+	
 	box-shadow:5px 5px 10px rgb(35, 77, 129);
 	border-radius: 20px;
 	position: relative;
-	width: 60%;
+	width: 100%;
+	margin-bottom: 100px;
 	
-  
 	
-  }
-  .contact-form:hover{
-	box-shadow:15px 15px 20px rgb(3, 18, 37);
-  }
-  
-  .contact-form label {
+	
+	}
+	.contact-form:hover{
+	  box-shadow:10px 10px 15px rgb(35, 77, 129);
+	}
+	
+	.contact-form label {
 	
 	color: black;
 	
-  }
-  .contact-form .heading {
+	}
+	.contact-form .heading {
 	font-size: 44px;
 	color: black;
 	
 	margin-bottom: 12px;
 	font-weight: 800;
 	display: block;
-  }
-  
-  .contact-form form {
+	}
+	
+	.contact-form form {
 	display: flex;
 	flex-direction: column;
-  }
-  
-  .contact-form label {
+	}
+	
+	.contact-form label {
 	font-weight: 400;
 	font-size: 20px;
 	margin-bottom: 10px;
-  }
-  
-  textarea {
+	}
+	
+	textarea {
 	resize: none;
 	
-   
-  }
-  
-  .contact-form input, .contact-form textarea {
+	
+	}
+	
+	.contact-form input, .contact-form textarea {
 	padding: 10px;
 	border: none;
 	border-radius: 5px;
 	margin-bottom: 20px;
-  }
-  
-  .contact-form input:focus, .contact-form textarea:focus {
+	}
+	
+	.contact-form input:focus, .contact-form textarea:focus {
 	outline: none;
 	box-shadow: 0 0 5px #ac90ed;
 	transform: scale(1.05);
 	transition: transform 0.3s ease-in-out;
-  }
-  
-  
-  .contact-form button[type="submit"] {
-	background-color: #9292c6;
+	}
+	
+	
+	.contact-form button[type="submit"] {
+	background-color: #92b0c6;
 	color: #fff;
 	border: none;
-	border-radius: 5px;
+	border-radius: 15px;
 	padding: 10px 20px;
 	font-size: 16px;
 	cursor: pointer;
 	width: 40%;
 	
 	
-  }
-  .contact-form button[type="reset"] {
-	background-color: #9292c6;
+	}
+	.contact-form button[type="reset"] {
+	background-color: #92b0c6;
 	color: #fff;
 	border: none;
-	border-radius: 5px;
+	border-radius: 15px;
 	padding: 10px 20px;
 	font-size: 16px;
 	cursor: pointer;
 	width: 40%;
 	margin-bottom: 10px;
 	
-  }
-  
-  .btn1 {
+	}
+	
+	.btn {
 	border: 2px solid gray;
-	color: rgb(117, 114, 114);
+	color: rgb(88, 86, 101);
 	background-color: white;
 	padding: 8px 20px;
-	border-radius: 20px;
+	border-radius: 8px;
 	font-size: 20px;
 	font-weight: bold;
+	box-shadow: 3px 3px 3px rgb(122, 119, 119);
 	
-  }
-  
-  .upload-btn-wrapper input[type=file] {
-	font-size: 50px;
-	position: absolute;
-	left: 0;
-	top: 0;
-	opacity: 0;
-  }
-  
-  .upload-btn-wrapper {
-	position: relative;
-	overflow: hidden;
-	display: inline-block;
-  }
-  
-  
-  .contact-form button[type="submit"]:hover {
+	
+	}
+	.btn:hover{
+	  box-shadow: 10px 10px 10px rgb(64, 63, 63);
+	}
+	
+	
+	.contact-form button[type="submit"]:hover {
 	transform: scale(1.1);
 	transition: transform 0.3s ease-in-out;
-  }
-  .contact-form button[type="reset"]:hover {
+	}
+	.contact-form button[type="reset"]:hover {
 	transform: scale(1.1);
 	transition: transform 0.3s ease-in-out;
-  }
-  
-  
+	}
+	
+	.error{
+	  color: red;
+	  margin-top: -20px;
+	  font-size: 15px;
+	}
+	/*! UPLOAD */
+	.fileUpload {
+	  position: relative;
+	  overflow: hidden;
+	  background-color:#92b0c6;
+	  color: #92b0c6;
+	  border: none;
+	  border-radius: 5px;
+	
+	}
+	.fileUpload:hover{
+	  
+	  background-color: #bdd3e0;
+	  color: #fff;
+	  border: none;
+	  border-radius: 5px;
+	  transform: scale(1.1);
+	  transition: transform 0.3s ease-in-out;
+	}
+	.fileUpload:focus{
+	  outline: none;
+	transform: scale(1.05);
+	transition: transform 0.3s ease-in-out;
+	}
+	
+	.fileUpload input.upload {
+	  position: absolute;
+	  top: 0;
+	  right: 0;
+	  margin: 0;
+	  margin-left: 5px;
+	  padding: 0;
+	  font-size: 20px;
+	  
+	  opacity: 0;
+	  filter: alpha(opacity=0);
+	}
+	
+	
   
   
   
@@ -525,6 +564,24 @@ html {
 	   .styled-input {
 		 width:100%;
 	   }
+	
+	.contact-form button[type="submit"]{
+	  font-size: 14px;
+	  font-weight: 200;
+	}
+	.btn-res{
+	  margin-top: 14px;
+	}
+	.col-xl-9 h1{
+		font-size: 20px;
+
+	}
+	.footer{
+		margin-right: 50px;
+		margin-left: 30px;
+	}
+	
+
 	 
 	 
 	   }

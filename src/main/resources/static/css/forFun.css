@@ -591,5 +591,8 @@ transition: transform 0.3s ease-in-out;
 .event-info .title{
   font-size: 25px;
 }
+.contact-form{
+  margin-bottom: 100px;
+}
 
 }
