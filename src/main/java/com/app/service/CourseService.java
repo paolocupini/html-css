@@ -9,6 +9,7 @@ import java.util.Set;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.util.StringUtils;
 import org.springframework.web.multipart.MultipartFile;
 
 import com.app.dto.ResponseCourseDto;
@@ -53,10 +54,13 @@ public class CourseService {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		
+		
 		repo.save(course);
 		return true;
 	}
 
+	
 	public Optional<ResponseCourseDto> getOneCourse(Integer course_code) {
 
 		log.info("Starting Course "+String.valueOf(course_code)+" retrieval...");

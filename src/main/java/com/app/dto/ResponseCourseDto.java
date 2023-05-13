@@ -24,6 +24,12 @@ public class ResponseCourseDto {
 	 */
 	private String resources;
 	
+	private String site;
+	private String prof;
+	private String yt;
+	private String chat;
+	private String maps;
+	
 	private String details;
 
 	private String professor_name;

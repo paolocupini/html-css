@@ -31,6 +31,11 @@ public class CourseMapper {
 				.professor_name(course.getProfessor_name())
 				.files(course.getFiles())
 				.image(course.getImage())
+				.chat(course.getChat())
+				.site(course.getSite())
+				.maps(course.getMaps())
+				.yt(course.getYt())
+				.prof(course.getProf())
 				.build();
 						
 	}

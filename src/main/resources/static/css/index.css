@@ -84,6 +84,10 @@ html {
 	width: 100%;
 	padding: 90px 0;
 	background-color: white;
+	text-align: center;
+	margin-bottom: 100px;
+	margin-top: 100px;
+
 }
 
 .text h2 {
@@ -142,6 +146,8 @@ span {
 	width: 100%;
 	padding: 90px 0;
 	background-color: white;
+	text-align: center;
+
 }
 
 /* bottom of the page */
@@ -156,11 +162,11 @@ span {
 	}
 	.pic {
 		height: auto;
-		width: 300px;
+		
 	}
 	.our-services {
-		padding-top: 300px;
-		padding-bottom: 300px;
+		text-align: center;
+		
 	}
 	.text p {
 		font-size: 15px;
@@ -174,11 +180,24 @@ span {
 }
 
 @media screen and (max-width: 600px) {
+	
 	.footer {
-		padding-top: 500px;
+		margin-bottom: 250px;
+		
 	}
+	.about-us{
+		text-align: center;
+		margin: auto;
+	}
+
+
 	.pic {
-		width: 200px;
+		width: 70%;
+		text-align: center;
+	}
+	.our-services{
+		margin-top: auto;
+		text-align: center;
 	}
 	.text h2 {
 		font-size: 20px;
@@ -187,11 +206,12 @@ span {
 		font-size: 13px;
 	}
 	.button-cl{
-		word-spacing: 100px;
+		
+		display: inline-block;
 		
 	  }
 	  .btn{
-		font-size: 20px;
+		font-size: 13px;
 	  }
 	  .btn:hover{
 		font-size: 30px;

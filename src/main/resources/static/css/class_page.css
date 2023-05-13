@@ -314,21 +314,51 @@ background-color: rgb(223, 212, 238);
 
 }
 @media only screen and (max-width: 768px) {
-    /* For mobile phones: */
-    *{
-        font-size: small;
-    }
-    .sidenav{
-        width: 100px;
-
-    }
-    .content{
-        
-        margin-left: 100px;
-    }
-   
-   
-   
-    
-   
+  /* For mobile phones: */
+  *{
+      font-size: small;
   }
+  .sidenav{
+      width: 100px;
+
+  }
+  .content{
+      
+      margin-left: 100px;
+  }
+ 
+  .nav a{
+    font-size: 12px;
+    display: inline-block;
+    text-align: center;
+  }
+  .navbar-brand{
+    font-size: 0px;
+  }
+ .content{
+ margin-top: 500px;
+ width: 300px;
+ margin-left: 5px;
+text-align: center;
+ }
+ .sidenav{
+  width: 250px;
+  margin-left: 35px;
+  height: 400px;
+ }
+ .sidenav a{
+  text-align: center;
+ }
+ .sidenav h5{
+  text-align: center;
+ }
+ 
+
+  iframe{
+      width: 70%;
+  }
+ 
+ 
+  
+ 
+}

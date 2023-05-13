@@ -48,6 +48,12 @@ public class Course {
 	@Length(max = 500)
 	@Column(columnDefinition = "varchar(500) default ' ' ")
 	private String resources;
+
+	private String site;
+	private String prof;
+	private String yt;
+	private String chat;
+	private String maps;
 	
 	
 	@Length(max = 1000)

@@ -30,10 +30,18 @@
 			name : $('#name').val(),
 			details : $('#details').val(),
 			resources : $('#resources').val(),
+			chat : $('#chat').val(),
+			prof : $('#prof').val(),
+			yt : $('#yt').val(),
+			site : $('#site').val(),
+			maps : $('#maps').val(),
 			professor_name : $('#professor_name').val(),
 			professor_details : $('#professor_details').val(),
 			year : $('#year').val()
 		};
+		
+		console.log(JSON.stringify(course));
+		
 		formData.append('course', new Blob([ JSON.stringify(course) ], {
 			type : 'application/json'
 		}));
@@ -297,7 +305,26 @@
 							<textarea id="resources" name="useful-resources"
 								style="direction:ltr;"></textarea>
 
+								
+							<label for="yt" style="margin-top: 10px;">Youtube Channel</label>
+							<input id="yt" name="yt" type="text"
+							style="direction:ltr;"></input>
+							
+							<label for="chat" style="margin-top: 10px;">WhatsApp chat group</label>
+							<input id="chat" name="chat" type="text"
+								style="direction:ltr;"></input>
+								
+							<label for="maps" style="margin-top: 10px;">Location</label>
+							<input id="maps" name="maps" type="text"
+								style="direction:ltr;"></input>
+								
+								<label for="site" style="margin-top: 10px;">Institutional Site</label>
+							<input id="site" name="site" type="text"
+								style="direction:ltr;"></input>
 
+							<label for="prof" style="margin-top: 10px;">Prof Site</label>
+							<input id="prof" name="prof" type="text"
+								style="direction:ltr;"></input>
 
 							<label for="upload-btn-wrapper">Select A File</label>
 							<div class="upload-btn-wrapper" style="margin-bottom: 30px;">

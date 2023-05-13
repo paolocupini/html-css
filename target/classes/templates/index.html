@@ -5,7 +5,7 @@
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
+<link rel="icon" type="image/x-icon" th:href="@{/images/favicon.ico}">
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
     integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
@@ -55,7 +55,7 @@
 
           <!-- buttons -->
           <div class="button-cl" style="margin-top: 200px; word-spacing: 320px;">
-          <button type="button" class="btn btn-primary btn-lg " style="margin-top:20px">
+          <button type="button" class="btn btn-primary btn-lg " style="margin-bottom:20px">
             <a th:href="@{/education}" style="color:inherit;     font-family: math;" > Education </a>
           </button>
           <button type="button" class="btn btn-primary btn-lg">
@@ -71,16 +71,18 @@
   <!-- Our services -->
   <section class="our-services reveal" id="ourServ">
     <div class="services">
-      <img th:src="@{/images/51407008322_94d228fe44_b.jpg}" class="pic">
 
       <div class="text">
         <h2>Our Services</h2>
         <p>
-          Qui deve essere spiegata brevemente lo scopo del sito, in
-          particolare spiegando come muoversi nelle due sezioni.
+          Il sito si pone come prerogativa il rendere più agevole e compatta la navigazione nel mare di informazioni che concernono la vita universitaria, sia in ambito didattico che in ambito sociale. 
+          Nella sezione "For Fun" troverai diverse categorie di eventi ed avrai la possibilità di aggiungerne dei nuovi. Nella sezione "Education" troverai le informazioni essenziali di ogni corso di studio, con la possibilità di suggerire materiale ed informazioni utili ai posteri. 
+          
+           
 
+         </p>
+         <img th:src="@{/images/51407008322_94d228fe44_b.jpg}" class="pic">
 
-        </p>
 
       </div>
     </div>
@@ -92,15 +94,15 @@
   <!--about us -->
   <section class="about-us reveal" id="about">
     <div class="about">
-      <img th:src="@{/images/marcopolo_foto1.jpg}" class="pic">
 
       <div class="text">
         <h2>About Us</h2>
 
-        <p>L'idea di SapienzaNET nasce da due studenti di Ingegneria Informatica frquentati il terzo anno.
-          Il nostro obiettivo è quello di rendere più agevole la navigazione nel mare di informazioni che concernono la
-          vita universitaria.
-        </p>
+        <p>L'idea di SapienzaNET nasce da due studenti di Ingegneria Informatica frquentati il terzo anno. 
+          Il progetto è stato svolto al termine del corso di Linguaggi E Teconologie Per Il Web. 
+          Puoi trovare tutto il codice sorgente nella repository GitHub al link sottostante.
+       </p>
+       <img th:src="@{/images/marcopolo_foto1.jpg}" class="pic">
 
       </div>
     </div>
@@ -117,6 +119,16 @@
   </div>
 
   <script type="text/javascript">
+    
+    $(document).ready(function() {
+  // Add the fade-in class to the education button
+  $('#education-btn').addClass('fade-in');
+  
+  // Remove the fade-in class when the button is clicked
+  $('#education-btn').click(function() {
+    $(this).removeClass('fade-in');
+  });
+});
     window.addEventListener('scroll',reveal);
     function reveal(){
       var reveals =document.querySelectorAll('.reveal');
