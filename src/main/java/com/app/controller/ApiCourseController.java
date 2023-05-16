@@ -7,11 +7,13 @@ import java.util.Optional;
 
 import javax.validation.Valid;
 
+import org.apache.tomcat.util.file.ConfigurationSource.Resource;
 import org.apache.tomcat.util.http.fileupload.impl.FileSizeLimitExceededException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ContentDisposition;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.FieldError;
 import org.springframework.web.bind.MethodArgumentNotValidException;
@@ -67,9 +69,9 @@ public class ApiCourseController {
 
 //	FILE HANDLING
 
-	@PostMapping("{course_code}/upload")
+	@PostMapping(path="{course_code}/upload")
 	public ResponseEntity<Boolean> upload(@PathVariable("course_code") Integer course_code,
-			@RequestPart("file") MultipartFile file) {
+			@RequestParam("file") MultipartFile file) {
 
 		boolean resp = service.storeFile(file, course_code);
 		return new ResponseEntity<Boolean>(resp, HttpStatus.OK);
@@ -81,7 +83,6 @@ public class ApiCourseController {
 			@RequestParam("filename") String filename) {
 		
 		HttpHeaders headers = new HttpHeaders();
-		headers.setContentDisposition( ContentDisposition.attachment().build()) ; 	
 		CourseFile resp = service.retrieveFile(filename,course_code);
 		
 		if(resp == null) {
@@ -89,6 +90,8 @@ public class ApiCourseController {
 			return ResponseEntity.ok().headers(headers).body(null);
 		}
 		
+		headers.setContentDisposition( ContentDisposition.attachment().build()) ; 	
+		headers.setContentType(MediaType.valueOf(resp.getType()));
 		
 		return ResponseEntity.ok().headers(headers).body(resp.getData());
 	}
