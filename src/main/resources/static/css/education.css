@@ -41,6 +41,8 @@ html {
 		background-color: #606285;
 		color:white;
 		box-shadow:5px 5px 5px rgb(65, 65, 72) ;
+		border: #72aab3;
+
   
 	}
 	.leftcolumn{
@@ -430,6 +432,8 @@ html {
 	}
 	.btn:hover{
 	  box-shadow: 10px 10px 10px rgb(64, 63, 63);
+	 border: #72aab3;
+
 	}
 	
 	
@@ -492,8 +496,11 @@ html {
   
 	/* Responsive layout */
 	@media screen and (max-width: 800px) {
+		.body{
+			width:90%;
+		}
 		.fixed-top{
-			margin-right: -15px;
+			margin-right: -5px;
 		  }
 		.contact-form{
 		   width: auto;
@@ -588,5 +595,3 @@ html {
 	 
 	 
 	   }
-	 
-	 

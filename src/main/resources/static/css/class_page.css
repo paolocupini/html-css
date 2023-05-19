@@ -1,8 +1,4 @@
 
-* {
-  box-sizing: border-box;
-  font-family:'Open Sans';
-}
 a, a:hover, a:focus, a:active {
 	text-decoration: none;
 	color: inherit;
@@ -14,10 +10,10 @@ body{
     background-color:white;
 }
 
-.navbar-collapse{
-  text-align: right;
-}
-
+* {
+    box-sizing: border-box;
+    font-family:'Open Sans';
+  }
   .reveal{
     position: relative;
     opacity: 0;
@@ -133,6 +129,11 @@ iframe{
     
   }
   
+
+
+
+
+
 
 
 /* sezione centrale */
