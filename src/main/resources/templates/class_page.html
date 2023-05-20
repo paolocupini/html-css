@@ -96,7 +96,7 @@ $(document).ready(function() {
 
 
 		<!-- course section-->
-		<div class="course reveal">
+		<div class="course">
 			<nav id="navbar-example2" class="navbar bg-light px-3 mb-3 ">
 				<a class="navbar-brand" style="font-weight: bold;" href="#" th:text="${course.getName()}">Course
 					Name</a>
@@ -129,24 +129,24 @@ $(document).ready(function() {
 			</div>
 
 
-			<div class="content reveal">
+			<div class="content">
 					<!-- Scrollpy Section Lezioni-->
 					<h4 id="scrollspyLesson">Info Corso</h4>
 					<div class="divider-1"> <span></span></div>
-					<div class="lessons">
+					<div class="lessons  reveal">
 						<p th:text="${course.getDetails()}">course details</p>
 					</div>
 					<!--Scrollpy section Schedule-->
 					<h4 id="scrollspyProf" th:text="|Prof. ${course.getProfessor_name()}|">Info Prof</h4>
 					<div class="divider-1"> <span></span></div>
-					<div class="info-prof ">
+					<div class="info-prof  reveal">
 						<p th:text="${course.getProfessor_details()}">Prof details</p>
 					</div>
 					<!-- risorse e link-->
 					<h4 id="scrollspyLinks">Risorse</h4>
 					<div class="divider-1"> <span></span></div>
 
-					<div class="sources">
+					<div class="sources  reveal">
 
 <!--  Questo [(${course.getResources()})] che vedi sotto serve per fare il display dell'html conservato nel db-->
 							
@@ -209,7 +209,7 @@ $(document).ready(function() {
 								  <h4 id="scrollspyLinks">File Upload</h4>
 								  <div class="divider-1"> <span></span></div>
 						
-								  <div class="info-prof" >
+								  <div class="info-prof  reveal" >
 									<p>Per contribuire allo sviluppo e all'efficienza del sito, puoi aggiungere file che ritieni utili per la fruizione dei futuri studenti.</p>
 								   <!-- FILE UPLOAD-->
 								   <form id="fileUpload">
